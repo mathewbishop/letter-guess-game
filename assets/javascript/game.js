@@ -20,7 +20,7 @@
 var wins = 0;
 var losses = 0;
 var guessesRemaining = 12;
-var guessChoices = [];
+
 
 // text variables for displaying html
 var directionsText = document.getElementById("directions-text");
@@ -54,12 +54,11 @@ document.onkeypress = function(event) {
     guessChoices = [];
     // an if statement that only allows game to run if user presses an alphabetical key
         if ((options.indexOf(userGuess) > -1) || (event.charCode == 13)) {
-
+            
                         // adds to wins if user guess is same as computer guess, else decreases guesses remaining
                         if (userGuess === computerGuess) {
                             ++wins;
                             guessesRemaining = 12;
-                            
                         }
                         else {
                             --guessesRemaining;   
@@ -70,6 +69,7 @@ document.onkeypress = function(event) {
                         if (guessesRemaining === 0) {
                             ++losses;
                             guessesRemaining = 12;
+                            guessChoices = [];
                         };
 
                         if (guessChoices.includes(userGuess)) 
