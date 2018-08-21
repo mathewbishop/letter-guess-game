@@ -48,7 +48,8 @@ if (code == 13) {
 document.onkeypress = function(event) {
     var userGuess = event.key.toLowerCase();    
     var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)]; 
-    
+    // records guessed letters
+    var guessedLetters = userGuess;
     
     // need an if statement that only allows game to run if user presses an alphabetical key
     
@@ -69,24 +70,20 @@ document.onkeypress = function(event) {
                         };
 
 
-                        if (userGuess === )
-                        
-
                         // win and loss conditions, enter runs a function gameReset() to restart the game
-                        if (wins === 2) {
+                        if (wins >= 2) {
                             winLossText.textContent = "You win! Press 'enter' to restart";
                             gameReset();
                         }
 
-                        if (losses === 2) {
+                        if (losses >= 2) {
                             winLossText.textContent = "You lose! Press 'enter' to restart";
                             gameReset(); 
                         }
         
             
 
-    // records guessed letters
-    var guessedLetters = userGuess;
+    
 
     // hide directions
     directionsText.textContent = "";
