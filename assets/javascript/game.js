@@ -12,14 +12,19 @@
             // guesses so far (display letters
     // on win or lose, restart game without page refresh
 
+// global variables
+
 var wins = 0;
 var losses = 0;
+var guessesRemaining = 7;
 
+// text variables for displaying html
+var directionsText = document.getElementById("directions-text");
 var winsText = document.getElementById("wins-text");
 var lossesText = document.getElementById("losses-text");
 var guessesRemainingText = document.getElementById("guessesRemaining-text");
 var guessedLettersText = document.getElementById("guessedLetters-text");
-var test = document.getElementById("test-text");
+
 
 
 var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
@@ -28,23 +33,25 @@ var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l
     
 
 document.onkeyup = function(event) {
-    var userGuess = event.key;    
+    var userGuess = event.key.toLowerCase();    
     var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)]; 
-    var guessesRemaining = 7;
-    for (var i = 0; i>0; i--) {
-        guessesRemaining[i];
-    }
-
+    
         if (userGuess === computerGuess) {
-            wins++;
+            ++wins;
+            guessesRemaining = 7;
         }
         else {
-            losses++;
-        }
-    
+            ++losses;
+            --guessesRemaining;   
+        };
+
+    var guessedLetters = userGuess.toString(",");
+    // hide directions
+    directionsText.textContent = "";
 
     winsText.textContent = "Breakthroughs: " + wins;
     lossesText.textContent = "Failures: " + losses;
     guessesRemainingText.textContent = "Guesses Remaining " + guessesRemaining;
-  
+    guessedLettersText.textContent += guessedLetters;
 };
+
