@@ -15,11 +15,12 @@
 
 
 
-    // global variables
+// global variables
 // counters
 var wins = 0;
 var losses = 0;
 var guessesRemaining = 12;
+var guessChoices = [];
 
 // text variables for displaying html
 var directionsText = document.getElementById("directions-text");
@@ -49,7 +50,7 @@ document.onkeypress = function(event) {
     var userGuess = event.key.toLowerCase();    
     var computerGuess = options[Math.floor(Math.random() * options.length)]; 
     // records guessed letters
-    var guessedLetters = userGuess;
+    //var guessedLetters = userGuess;
     
     // an if statement that only allows game to run if user presses an alphabetical key
         if ((options.indexOf(userGuess) > -1) || (event.charCode == 13)) {
@@ -58,9 +59,11 @@ document.onkeypress = function(event) {
                         if (userGuess === computerGuess) {
                             ++wins;
                             guessesRemaining = 12;
+                            guessChoices = [];
                         }
                         else {
                             --guessesRemaining;   
+                            guessChoices.push(userGuess);
                         };
 
                         // if the guesses remaining falls to zero, then 1 is added to losses
@@ -68,6 +71,8 @@ document.onkeypress = function(event) {
                             ++losses;
                             guessesRemaining = 12;
                         };
+
+                        if (guessChoices.includes(userGuess)) 
 
 
                         // win and loss conditions, enter runs a function gameReset() to restart the game
@@ -81,7 +86,7 @@ document.onkeypress = function(event) {
                             gameReset(); 
                         }
         
-            
+                        
 
     
 
@@ -92,7 +97,7 @@ document.onkeypress = function(event) {
     winsText.textContent = "Breakthroughs: " + wins;
     lossesText.textContent = "Failures: " + losses;
     guessesRemainingText.textContent = "Guesses Remaining " + guessesRemaining;
-    guessedLettersText.textContent += guessedLetters.toUpperCase();
+    guessedLettersText.textContent += guessChoices.join(",");
 
     }
         
