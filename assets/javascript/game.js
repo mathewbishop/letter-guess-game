@@ -36,7 +36,6 @@ var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l
 document.onkeypress = function(event) {
     var userGuess = event.key.toLowerCase();    
     var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)]; 
-
     
             
 
@@ -49,11 +48,16 @@ document.onkeypress = function(event) {
             --guessesRemaining;   
         };
 
+
         if (guessesRemaining === 0) {
             ++losses;
             guessesRemaining = 12;
             guessedLettersText.textContent = "";
         };
+
+        if (wins === 7) {
+            document.location.reload();
+        }
 
 
     var guessedLetters = userGuess;
@@ -65,7 +69,11 @@ document.onkeypress = function(event) {
     guessesRemainingText.textContent = "Guesses Remaining " + guessesRemaining;
     guessedLettersText.textContent += guessedLetters.toUpperCase();
 
+    
+
 }
+
+
 
 
     
