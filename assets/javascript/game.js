@@ -53,34 +53,35 @@ document.onkeypress = function(event) {
     // need an if statement that only allows game to run if user presses an alphabetical key
     
     
-    
-        if (userGuess === computerGuess) {
-            ++wins;
-            guessesRemaining = 12;
-        }
-        else {
-            --guessesRemaining;   
-        };
+                        // adds to wins if user guess is same as computer guess, else decreases guesses remaining
+                        if (userGuess === computerGuess) {
+                            ++wins;
+                            guessesRemaining = 12;
+                        }
+                        else {
+                            --guessesRemaining;   
+                        };
+
+                        // if the guesses remaining falls to zero, then 1 is added to losses
+                        if (guessesRemaining === 0) {
+                            ++losses;
+                            guessesRemaining = 12;
+                        };
 
 
-        if (guessesRemaining === 0) {
-            ++losses;
-            guessesRemaining = 12;
-            
-        };
+                        if (userGuess === )
+                        
 
-        if (userGuess === )
+                        // win and loss conditions, enter runs a function gameReset() to restart the game
+                        if (wins === 2) {
+                            winLossText.textContent = "You win! Press 'enter' to restart";
+                            gameReset();
+                        }
 
-       
-        if (wins === 2) {
-            winLossText.textContent = "You win! Press 'enter' to restart";
-            gameReset();
-        }
-
-        if (losses === 2) {
-            winLossText.textContent = "You lose! Press 'enter' to restart";
-            gameReset(); 
-        }
+                        if (losses === 2) {
+                            winLossText.textContent = "You lose! Press 'enter' to restart";
+                            gameReset(); 
+                        }
         
             
 
