@@ -12,8 +12,11 @@
             // guesses so far (display letters
     // on win or lose, restart game without page refresh
 
-// global variables
 
+
+
+    // global variables
+// counters
 var wins = 0;
 var losses = 0;
 var guessesRemaining = 12;
@@ -24,25 +27,36 @@ var winsText = document.getElementById("wins-text");
 var lossesText = document.getElementById("losses-text");
 var guessesRemainingText = document.getElementById("guessesRemaining-text");
 var guessedLettersText = document.getElementById("guessedLetters-text");
-var invalidInputText = document.getElementById("invalidInput-text")
+var invalidInputText = document.getElementById("invalidInput-text");
+var winLossText = document.getElementById("winLoss-text");
 
 
-
+// computer chooses 1 letter from alphabet
 var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+
+// function that resets the game, called upon a met win/loss condition
+function gameReset() {
+    var code = event.charCode;
+if (code == 13) { 
+    document.location.reload();
+    }
+}
 
 
     
-
+// the main function of the game
 document.onkeypress = function(event) {
     var userGuess = event.key.toLowerCase();    
     var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)]; 
     
-            
-
+    
+    // need an if statement that only allows game to run if user presses an alphabetical key
+    
+    
+    
         if (userGuess === computerGuess) {
             ++wins;
             guessesRemaining = 12;
-            guessedLettersText.textContent = "";
         }
         else {
             --guessesRemaining;   
@@ -52,18 +66,31 @@ document.onkeypress = function(event) {
         if (guessesRemaining === 0) {
             ++losses;
             guessesRemaining = 12;
-            guessedLettersText.textContent = "";
+            
         };
 
-        if (wins === 7) {
-            document.location.reload();
+        if (userGuess === )
+
+       
+        if (wins === 2) {
+            winLossText.textContent = "You win! Press 'enter' to restart";
+            gameReset();
         }
 
+        if (losses === 2) {
+            winLossText.textContent = "You lose! Press 'enter' to restart";
+            gameReset(); 
+        }
+        
+            
 
+    // records guessed letters
     var guessedLetters = userGuess;
+
     // hide directions
     directionsText.textContent = "";
 
+    // display counters and guessed letters
     winsText.textContent = "Breakthroughs: " + wins;
     lossesText.textContent = "Failures: " + losses;
     guessesRemainingText.textContent = "Guesses Remaining " + guessesRemaining;
