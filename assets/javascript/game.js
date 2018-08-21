@@ -31,8 +31,8 @@ var invalidInputText = document.getElementById("invalidInput-text");
 var winLossText = document.getElementById("winLoss-text");
 
 
-// computer chooses 1 letter from alphabet
-var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+// list of options to choose from
+var options = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
 // function that resets the game, called upon a met win/loss condition
 function gameReset() {
@@ -47,13 +47,13 @@ if (code == 13) {
 // the main function of the game
 document.onkeypress = function(event) {
     var userGuess = event.key.toLowerCase();    
-    var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)]; 
+    var computerGuess = options[Math.floor(Math.random() * options.length)]; 
     // records guessed letters
     var guessedLetters = userGuess;
     
-    // need an if statement that only allows game to run if user presses an alphabetical key
-    
-    
+    // an if statement that only allows game to run if user presses an alphabetical key
+        if ((options.indexOf(userGuess) > -1) || (event.charCode == 13)) {
+
                         // adds to wins if user guess is same as computer guess, else decreases guesses remaining
                         if (userGuess === computerGuess) {
                             ++wins;
@@ -94,6 +94,8 @@ document.onkeypress = function(event) {
     guessesRemainingText.textContent = "Guesses Remaining " + guessesRemaining;
     guessedLettersText.textContent += guessedLetters.toUpperCase();
 
+    }
+        
     
 
 }
