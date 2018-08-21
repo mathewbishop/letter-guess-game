@@ -51,7 +51,7 @@ document.onkeypress = function(event) {
     var computerGuess = options[Math.floor(Math.random() * options.length)]; 
     // records guessed letters
     //var guessedLetters = userGuess;
-    
+    guessChoices = [];
     // an if statement that only allows game to run if user presses an alphabetical key
         if ((options.indexOf(userGuess) > -1) || (event.charCode == 13)) {
 
@@ -59,7 +59,7 @@ document.onkeypress = function(event) {
                         if (userGuess === computerGuess) {
                             ++wins;
                             guessesRemaining = 12;
-                            guessChoices = [];
+                            
                         }
                         else {
                             --guessesRemaining;   
@@ -97,7 +97,7 @@ document.onkeypress = function(event) {
     winsText.textContent = "Breakthroughs: " + wins;
     lossesText.textContent = "Failures: " + losses;
     guessesRemainingText.textContent = "Guesses Remaining " + guessesRemaining;
-    guessedLettersText.textContent += guessChoices.join(",");
+    guessedLettersText.textContent += guessChoices.join(" ").toUpperCase();
 
     }
         
