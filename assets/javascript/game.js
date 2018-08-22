@@ -38,7 +38,7 @@ var options = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", 
 // function that resets the game, called upon a met win/loss condition
 function gameReset() {
     var code = event.charCode;
-if (code == 13) { 
+if (code === 13) { 
     document.location.reload();
     }
 }
@@ -58,27 +58,27 @@ document.onkeypress = function(event) {
     guessedLettersText.style.display = "initial";
     // records guessed letters
     guessedLetters = [];
+    //var duplicateCheck = guessedLetters.includes(userGuess);
     // an if statement that only allows game to run if user presses an alphabetical key
-        if ((options.indexOf(userGuess) > -1) || (event.charCode == 13)) {
-            
-            
+        if ((options.indexOf(userGuess) > -1) || (event.charCode === 13)) {
+                        
+                
                         // adds to wins if user guess is same as computer guess, else decreases guesses remaining
                         if (userGuess === computerGuess) {
                             ++wins;
                             guessesRemaining = 12;
                         }
-                        else {
+                        else  {
                             --guessesRemaining;   
                             guessedLetters.push(userGuess);
-                        };
-
+                        }
+                            
                         // if the guesses remaining falls to zero, 1 is added to losses, guessesRemaining and guessedLetters reset
                         if (guessesRemaining === 0) {
                             ++losses;
                             guessesRemaining = 12;
                             guessedLettersReset();
-                        };
-
+                        }
 
                         // win and loss conditions, enter runs a function gameReset() to restart the game
                         if (wins >= 2) {
@@ -90,6 +90,10 @@ document.onkeypress = function(event) {
                             winLossText.textContent = "You lose! Press 'enter' to restart";
                             gameReset(); 
                         }
+
+                         
+                            
+                        
 
                         
                         
@@ -109,6 +113,7 @@ document.onkeypress = function(event) {
     lossesText.textContent = "Failures: " + losses;
     guessesRemainingText.textContent = "Guesses Remaining " + guessesRemaining;
     guessedLettersText.textContent += guessedLetters.join(" ").toUpperCase();
+        
 
     }
         
