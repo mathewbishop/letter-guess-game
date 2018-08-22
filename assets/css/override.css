@@ -1,0 +1,16 @@
+.jumbotron {
+    font-family: 'Share Tech Mono', monospace;
+    background-image: url('../images/cityscape.svg');
+    color: gray;
+}
+
+.lead {
+    font-size: 2.5rem;
+}
+
+#override {
+    font-size: 5rem;
+    
+    
+}
+
