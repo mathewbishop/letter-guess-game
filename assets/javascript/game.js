@@ -79,8 +79,6 @@ document.onkeypress = function(event) {
                             guessedLettersReset();
                         };
 
-                        
-
 
                         // win and loss conditions, enter runs a function gameReset() to restart the game
                         if (wins >= 2) {
@@ -92,6 +90,12 @@ document.onkeypress = function(event) {
                             winLossText.textContent = "You lose! Press 'enter' to restart";
                             gameReset(); 
                         }
+
+                        
+                        
+                    
+                            
+                        
         
                         
 
