@@ -42,18 +42,25 @@ if (code == 13) {
     document.location.reload();
     }
 }
-
-
-    
+// function for resetting the guessed letters array
+function guessedLettersReset() {
+    guessedLettersText.textContent = "Guessed Letters: ";
+}
+// hides "Guessed Letters: " html until user begins game
+guessedLettersText.style.display = "none";
 // the main function of the game
 document.onkeypress = function(event) {
+    // stores the keypress of the user and converts it to lower case
     var userGuess = event.key.toLowerCase();    
+    // stores the computers guess, a random index number from the array 'options'
     var computerGuess = options[Math.floor(Math.random() * options.length)]; 
+    // displays "Guessed Letters: " html once user begins game
+    guessedLettersText.style.display = "initial";
     // records guessed letters
-    //var guessedLetters = userGuess;
-    guessChoices = [];
+    guessedLetters = [];
     // an if statement that only allows game to run if user presses an alphabetical key
         if ((options.indexOf(userGuess) > -1) || (event.charCode == 13)) {
+            
             
                         // adds to wins if user guess is same as computer guess, else decreases guesses remaining
                         if (userGuess === computerGuess) {
@@ -62,17 +69,17 @@ document.onkeypress = function(event) {
                         }
                         else {
                             --guessesRemaining;   
-                            guessChoices.push(userGuess);
+                            guessedLetters.push(userGuess);
                         };
 
-                        // if the guesses remaining falls to zero, then 1 is added to losses
+                        // if the guesses remaining falls to zero, 1 is added to losses, guessesRemaining and guessedLetters reset
                         if (guessesRemaining === 0) {
                             ++losses;
                             guessesRemaining = 12;
-                            guessChoices = [];
+                            guessedLettersReset();
                         };
 
-                        if (guessChoices.includes(userGuess)) 
+                        
 
 
                         // win and loss conditions, enter runs a function gameReset() to restart the game
@@ -97,7 +104,7 @@ document.onkeypress = function(event) {
     winsText.textContent = "Breakthroughs: " + wins;
     lossesText.textContent = "Failures: " + losses;
     guessesRemainingText.textContent = "Guesses Remaining " + guessesRemaining;
-    guessedLettersText.textContent += guessChoices.join(" ").toUpperCase();
+    guessedLettersText.textContent += guessedLetters.join(" ").toUpperCase();
 
     }
         
