@@ -1,19 +1,3 @@
-// letter guess game
-// computer guesses a letter, and the user must guess the correct letter to win
-// components
-    // list of computer choices  
-    // computer picks a random letter
-    // record user input to get the user's guess
-    // compare the user guess with the computer guess to determine a winner
-        // counters
-            // wins
-            // losses
-            // number of remaining guesses
-            // guesses so far (display letters
-    // on win or lose, restart game without page refresh
-
-
-
 
 // global variables
 // counters
@@ -91,19 +75,6 @@ document.onkeypress = function(event) {
                             gameReset(); 
                         }
 
-                         
-                            
-                        
-
-                        
-                        
-                    
-                            
-                        
-        
-                        
-
-    
 
     // hide directions
     directionsText.textContent = "";
@@ -116,8 +87,6 @@ document.onkeypress = function(event) {
         
 
     }
-        
-    
 
 }
 
