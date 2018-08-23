@@ -43,9 +43,10 @@ document.onkeypress = function(event) {
     // records guessed letters
     guessedLetters = [];
     //var duplicateCheck = guessedLetters.includes(userGuess);
-    // an if statement that only allows game to run if user presses an alphabetical key
+    // an if statement that only allows game to run if user presses an alphabetical key or enter
         if ((options.indexOf(userGuess) > -1) || (event.charCode === 13)) {
                         
+            
                 
                         // adds to wins if user guess is same as computer guess, else decreases guesses remaining
                         if (userGuess === computerGuess) {
@@ -56,12 +57,15 @@ document.onkeypress = function(event) {
                             --guessesRemaining;   
                             guessedLetters.push(userGuess);
                         }
-                            
+    
                         // if the guesses remaining falls to zero, 1 is added to losses, guessesRemaining and guessedLetters reset
                         if (guessesRemaining === 0) {
                             ++losses;
                             guessesRemaining = 12;
                             guessedLettersReset();
+                        }
+                        // why isn't this working??? 
+                        if (guessedLetters.includes(userGuess)) {
                         }
 
                         // win and loss conditions, enter runs a function gameReset() to restart the game
