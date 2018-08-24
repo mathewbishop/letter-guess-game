@@ -15,7 +15,8 @@ var guessedLettersText = document.getElementById("guessedLetters-text");
 var invalidInputText = document.getElementById("invalidInput-text");
 var winLossText = document.getElementById("winLoss-text");
 
-
+// an empty array to store the userGuess
+var guessedLetters = [];
 // list of options to choose from
 var options = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
@@ -26,10 +27,8 @@ if (code === 13) {
     document.location.reload();
     }
 }
-// function for resetting the guessed letters array
-function guessedLettersReset() {
-    guessedLettersText.textContent = "Guessed Letters: ";
-}
+
+
 // hides "Guessed Letters: " html until user begins game
 guessedLettersText.style.display = "none";
 // the main function of the game
@@ -40,8 +39,8 @@ document.onkeypress = function(event) {
     var computerGuess = options[Math.floor(Math.random() * options.length)]; 
     // displays "Guessed Letters: " html once user begins game
     guessedLettersText.style.display = "initial";
-    // records guessed letters
-    guessedLetters = [];
+    
+    
     //var duplicateCheck = guessedLetters.includes(userGuess);
     // an if statement that only allows game to run if user presses an alphabetical key or enter
         if ((options.indexOf(userGuess) > -1) || (event.charCode === 13)) {
@@ -54,7 +53,7 @@ document.onkeypress = function(event) {
                             guessesRemaining = 12;
                         }
                         else  {
-                            --guessesRemaining;   
+                            --guessesRemaining;
                             guessedLetters.push(userGuess);
                         }
     
@@ -62,7 +61,7 @@ document.onkeypress = function(event) {
                         if (guessesRemaining === 0) {
                             ++losses;
                             guessesRemaining = 12;
-                            guessedLettersReset();
+                            guessedLetters = [];
                         }
                         // why isn't this working??? 
                         if (guessedLetters.includes(userGuess)) {
@@ -87,7 +86,7 @@ document.onkeypress = function(event) {
     winsText.textContent = "Breakthroughs: " + wins;
     lossesText.textContent = "Failures: " + losses;
     guessesRemainingText.textContent = "Guesses Remaining " + guessesRemaining;
-    guessedLettersText.textContent += guessedLetters.join(" ").toUpperCase();
+    guessedLettersText.textContent = "Guessed: " + guessedLetters.join(" ").toUpperCase();
         
 
     }
