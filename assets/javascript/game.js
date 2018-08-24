@@ -29,6 +29,7 @@ if (code === 13) {
 }
 
 
+
 // hides "Guessed Letters: " html until user begins game
 guessedLettersText.style.display = "none";
 // the main function of the game
@@ -45,16 +46,24 @@ document.onkeypress = function(event) {
     // an if statement that only allows game to run if user presses an alphabetical key or enter
         if ((options.indexOf(userGuess) > -1) || (event.charCode === 13)) {
                         
-            
+                        
+                        
                 
-                        // adds to wins if user guess is same as computer guess, else decreases guesses remaining
+                        // if userGuess is equal to computerGuess, adds to wins and resets guessesRemaining
                         if (userGuess === computerGuess) {
                             ++wins;
                             guessesRemaining = 12;
                         }
+                        // if the above are not equal...
                         else  {
+                            if (guessedLetters.includes(userGuess)) {  // does not allow duplicate guesses
+                            
+                            }
+                            // subtracts from guessesRemaining and pushes the guessedletter to the appropriate array
+                            else {                                     
                             --guessesRemaining;
                             guessedLetters.push(userGuess);
+                            }
                         }
     
                         // if the guesses remaining falls to zero, 1 is added to losses, guessesRemaining and guessedLetters reset
@@ -63,9 +72,7 @@ document.onkeypress = function(event) {
                             guessesRemaining = 12;
                             guessedLetters = [];
                         }
-                        // why isn't this working??? 
-                        if (guessedLetters.includes(userGuess)) {
-                        }
+                    
 
                         // win and loss conditions, enter runs a function gameReset() to restart the game
                         if (wins >= 2) {
