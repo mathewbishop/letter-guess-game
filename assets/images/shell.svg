@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg _SVGFile__filename="oldscale/devices/chardevice.svg" sodipodi:docbase="/home/danny/work/icons/primary/scalable/devices" sodipodi:docname="chardevice.svg" sodipodi:version="0.32" version="1.0" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://inkscape.sourceforge.net/DTD/sodipodi-0.dtd">
+ <sodipodi:namedview bordercolor="#666666" borderopacity="1.0" pagecolor="#ffffff"/>
+ <path d="m7.125 4.6875c-1.0276 0-1.8438 0.8161-1.8438 1.8437v30.875c0 1.028 0.8162 1.844 1.8438 1.844h13.875c-9.549 2.828-15.244 12.932-15.938 16.062h49.876s-4.661-12.812-15.469-16.062h13.406c1.028 0 1.844-0.816 1.844-1.844v-30.875c0-1.0274-0.816-1.8435-1.844-1.8435h-45.75z" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="8.125"/>
+ <path transform="matrix(.92743 0 0 .92744 2.0751 2.0265)" d="m3.2159 57.455h53.788s-6.804-18.991-23.107-18.18c-2.054 0-3.98-0.162-6.804 0-14.378-0.974-22.976 14.122-23.875 18.18" fill="#d9dddf" fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.3695"/>
+ <path transform="matrix(.92743 0 0 .92744 2.2092 2.0265)" d="m5.3083 2.8688c-1.108 0-2 0.892-2 2v33.281c0 1.108 0.892 2 2 2h49.314c1.108 0 2-0.892 2-2v-33.281c0-1.1082-0.892-2.0002-2-2.0002h-49.314z" fill="#d9dddf" fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.3695"/>
+ <g transform="translate(3.249e-6 -.91136)">
+  <path d="m10.01 9.7615v26.25h39.98v-26.25l-39.98-5e-4z" fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.875"/>
+  <path d="m13.213 12.935v-0.87l6.524 2.222v0.793l-6.524 2.222v-0.87l5.242-1.744-5.242-1.753z" fill="#fff"/>
+ </g>
+</svg>
