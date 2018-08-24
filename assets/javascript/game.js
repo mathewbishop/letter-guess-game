@@ -3,7 +3,7 @@
 // counters
 var wins = 0;
 var losses = 0;
-var guessesRemaining = 12;
+var guessesRemaining = 10;
 
 
 // text variables for displaying html
@@ -52,7 +52,7 @@ document.onkeypress = function(event) {
                         // if userGuess is equal to computerGuess, adds to wins and resets guessesRemaining
                         if (userGuess === computerGuess) {
                             ++wins;
-                            guessesRemaining = 12;
+                            guessesRemaining = 10;
                         }
                         // if the above are not equal...
                         else  {
@@ -69,18 +69,18 @@ document.onkeypress = function(event) {
                         // if the guesses remaining falls to zero, 1 is added to losses, guessesRemaining and guessedLetters reset
                         if (guessesRemaining === 0) {
                             ++losses;
-                            guessesRemaining = 12;
+                            guessesRemaining = 10;
                             guessedLetters = [];
                         }
                     
 
                         // win and loss conditions, enter runs a function gameReset() to restart the game
-                        if (wins >= 2) {
+                        if (wins >= 3) {
                             winLossText.textContent = "You win! Press 'enter' to restart";
                             gameReset();
                         }
 
-                        if (losses >= 2) {
+                        if (losses >= 4) {
                             winLossText.textContent = "You lose! Press 'enter' to restart";
                             gameReset(); 
                         }
@@ -93,7 +93,7 @@ document.onkeypress = function(event) {
     winsText.textContent = "Breakthroughs: " + wins;
     lossesText.textContent = "Failures: " + losses;
     guessesRemainingText.textContent = "Guesses Remaining " + guessesRemaining;
-    guessedLettersText.textContent = "Guessed: " + guessedLetters.join(" ").toUpperCase();
+    guessedLettersText.textContent = "Guessed: " + guessedLetters.join("").toUpperCase();
         
 
     }
