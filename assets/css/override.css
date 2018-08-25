@@ -1,3 +1,7 @@
+body {
+    background-color: #414288;
+}
+
 .jumbotron {
     font-family: 'Share Tech Mono', monospace;
     color: #25E014;
@@ -6,7 +10,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: local;
-    background-color: #313E50;
+    background-color: #000000;
      
 }
 
@@ -19,6 +23,11 @@
 #h1-override {
     font-size: 5em;
     padding-top: 2%;
-    
+}
+
+
+#game-text {
+    color: #25E014;
+    font-family: 'Share Tech Mono', monospace;
 }
 

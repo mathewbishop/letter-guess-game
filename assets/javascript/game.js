@@ -14,6 +14,7 @@ var guessesRemainingText = document.getElementById("guessesRemaining-text");
 var guessedLettersText = document.getElementById("guessedLetters-text");
 var invalidInputText = document.getElementById("invalidInput-text");
 var winLossText = document.getElementById("winLoss-text");
+var storyText = document.getElementById("story-text");
 
 // an empty array to store the userGuess
 var guessedLetters = [];
@@ -40,12 +41,13 @@ document.onkeypress = function(event) {
     var computerGuess = options[Math.floor(Math.random() * options.length)]; 
     // displays "Guessed Letters: " html once user begins game
     guessedLettersText.style.display = "initial";
+    storyText.style.display = "none";
     
     
     //var duplicateCheck = guessedLetters.includes(userGuess);
     // an if statement that only allows game to run if user presses an alphabetical key or enter
         if ((options.indexOf(userGuess) > -1) || (event.charCode === 13)) {
-                        
+    
                         
                         
                 
@@ -93,7 +95,7 @@ document.onkeypress = function(event) {
     winsText.textContent = "Breakthroughs: " + wins;
     lossesText.textContent = "Failures: " + losses;
     guessesRemainingText.textContent = "Guesses Remaining " + guessesRemaining;
-    guessedLettersText.textContent = "Guessed: " + guessedLetters.join("").toUpperCase();
+    guessedLettersText.textContent = guessedLetters.join("").toUpperCase();
         
 
     }
