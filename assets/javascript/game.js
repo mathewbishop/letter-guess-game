@@ -76,21 +76,21 @@ document.onkeypress = function(event) {
 
                         // win and loss conditions, enter runs a function gameReset() to restart the game
                         if (wins >= 3) {
-                            winLossText.textContent = "...welcome to sentinel_corp. (you found emails proving that Sentinel intentionally infected the population with an engineered illness so they could sell the cure). \n Press 'enter' to restart.";
+                            winLossText.innerHTML = "...welcome to sentinel_corp. (you found emails proving that Sentinel intentionally infected the population with an engineered illness so they could sell the cure).<br>Press 'enter' to restart.";
                             gameReset();
                         }
 
                         if (losses >= 4) {
-                            winLossText.textContent = "...auth_failure.. init_safe_lockout (you have been locked out of Sentinel's servers, and are probably being tracked). Press 'enter' to restart";
+                            winLossText.innerHTML = "...auth_failure.. init_safe_lockout (you have been locked out of Sentinel's servers, and are probably being tracked).<br>Press 'enter' to restart";
                             gameReset(); 
                         }
 
 
     // display counters and guessed letters
-    winsText.textContent = "Breakthroughs: " + wins;
-    lossesText.textContent = "Failures: " + losses;
-    guessesRemainingText.textContent = "Guesses Remaining " + guessesRemaining;
-    guessedLettersText.textContent = guessedLetters.join("").toUpperCase();
+    winsText.innerHTML = "Breakthroughs: " + wins;
+    lossesText.innerHTML = "Failures: " + losses;
+    guessesRemainingText.innerHTML = "Guesses Remaining " + guessesRemaining;
+    guessedLettersText.innerHTML = guessedLetters.join("").toUpperCase();
         
 
     }
