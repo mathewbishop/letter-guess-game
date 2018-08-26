@@ -41,14 +41,12 @@ document.onkeypress = function(event) {
     var computerGuess = options[Math.floor(Math.random() * options.length)]; 
     // displays "Guessed Letters: " html once user begins game
     guessedLettersText.style.display = "initial";
+    // hides flavor text and directions text
+    directionsText.style.display = "none";
     storyText.style.display = "none";
     
-    
-    //var duplicateCheck = guessedLetters.includes(userGuess);
     // an if statement that only allows game to run if user presses an alphabetical key or enter
-        if ((options.indexOf(userGuess) > -1) || (event.charCode === 13)) {
-    
-                        
+        if ((options.indexOf(userGuess) > -1) || (event.charCode === 13)) {                    
                         
                 
                         // if userGuess is equal to computerGuess, adds to wins and resets guessesRemaining
@@ -78,18 +76,15 @@ document.onkeypress = function(event) {
 
                         // win and loss conditions, enter runs a function gameReset() to restart the game
                         if (wins >= 3) {
-                            winLossText.textContent = "You win! Press 'enter' to restart";
+                            winLossText.textContent = "...welcome to sentinel_corp. (you found emails proving that Sentinel intentionally infected the population with an engineered illness so they could sell the cure). \n Press 'enter' to restart.";
                             gameReset();
                         }
 
                         if (losses >= 4) {
-                            winLossText.textContent = "You lose! Press 'enter' to restart";
+                            winLossText.textContent = "...auth_failure.. init_safe_lockout (you have been locked out of Sentinel's servers, and are probably being tracked). Press 'enter' to restart";
                             gameReset(); 
                         }
 
-
-    // hide directions
-    directionsText.textContent = "";
 
     // display counters and guessed letters
     winsText.textContent = "Breakthroughs: " + wins;
