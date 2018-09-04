@@ -2,15 +2,24 @@ body {
     background-color: #414288;
 }
 
-.jumbotron {
+/*body {
     font-family: 'Share Tech Mono', monospace;
     color: #25E014;
     background-image: url('../images/shell.svg');
-    background-size: 50% 120%;
+    background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: local;
+    background-size: cover;
     background-color: #000000;
+}*/
+
+img.bg {
+    min-height: 100%;
+    width: 120%;
+    height: 100%;
+    z-index: 0;
+    display: inline;
 }
 
 .lead {
