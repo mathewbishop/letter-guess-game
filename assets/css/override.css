@@ -1,17 +1,14 @@
 
-body {
-    background-color: #414288;
-}
 
 body {
     font-family: 'Share Tech Mono', monospace;
     color: #25E014;
-    background-image: url('../images/shell.svg');
+    background-image: url('../images/shell_noprompt.svg');
     background-position: 50% 25%;
     background-repeat: no-repeat;
     background-attachment: local;
-    background-size: 105%;
-    background-color: #000000;
+    background-size: 115%;
+    background-color: #414288;
 }
 
 
