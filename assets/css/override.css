@@ -1,26 +1,19 @@
+
 body {
     background-color: #414288;
 }
 
-/*body {
+body {
     font-family: 'Share Tech Mono', monospace;
     color: #25E014;
     background-image: url('../images/shell.svg');
-    background-size: 100% 100%;
-    background-position: center;
+    background-position: 50% 25%;
     background-repeat: no-repeat;
     background-attachment: local;
-    background-size: cover;
+    background-size: 105%;
     background-color: #000000;
-}*/
-
-img.bg {
-    min-height: 100%;
-    width: 120%;
-    height: 100%;
-    z-index: 0;
-    display: inline;
 }
+
 
 .lead {
     font-size: 2.5em;
@@ -28,7 +21,7 @@ img.bg {
     padding-bottom: 5%;
 }
 
-#h1-override {
+#title {
     font-size: 5em;
     padding-top: 2%;
 }
