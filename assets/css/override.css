@@ -16,7 +16,7 @@ body {
     padding-top: 2%;
     border-bottom: 1px solid #25E014;
     position: relative;
-    top: 50px;
+    top: 10px;
 }
 
 #subtitle {
@@ -24,7 +24,7 @@ body {
     margin-top: 0;
     padding-bottom: 5%;
     position: relative;
-    top: 40px;
+    top: 10px;
 }
 
 
