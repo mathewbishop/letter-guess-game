@@ -29,7 +29,6 @@ if (code === 13) {
     }
 }
 
-
 // hides "Guessed Letters: " html until user begins game
 guessedLettersText.style.display = "none";
 // the main function of the game
