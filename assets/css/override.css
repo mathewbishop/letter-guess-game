@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
     font-family: 'Bungee Inline', cursive;
@@ -29,10 +34,15 @@ body {
 
 
 
-#game-text {
+#info-text {
+    margin-top: -4rem;
     color: #25E014;
     font-family: 'Share Tech Mono', monospace;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
+}
+
+#directions-text {
+    margin-top: -3rem;
 }
 
 #stats-text {
