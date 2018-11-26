@@ -38,4 +38,4 @@ function wordGen() {
 
 
 
-console.log(wordGen());
+
