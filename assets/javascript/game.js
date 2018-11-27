@@ -1,11 +1,11 @@
 //===================================================================
 // DOM Nodes
 //===================================================================
-// const hiddenWord = document.getElementById("hidden-word");
-// const hint = document.getElementById("hint");
-// const clock = document.getElementById("clock");
-// const guessed = document.getElementById("guessed-letters");
-// const usrInput = document.getElementById("user-input");
+const hiddenWord = document.getElementById("hidden-word");
+const hint = document.getElementById("hint");
+const clock = document.getElementById("clock");
+const guessed = document.getElementById("guessed-letters");
+const userInput = document.getElementById("user-input");
 //===================================================================
 // Generate Hidden Word
 //===================================================================
@@ -35,7 +35,20 @@ function wordGen() {
     let wordChosen =  wordBank[Math.floor(Math.random() * wordBank.length)]
     return wordChosen.word;
 }
+//===================================================================
+// Compare guess to hidden word
+//===================================================================
+function guessCompare(currentWord, usrGuess) {
+    for (let i = 0; i < currentWord.length; i++) {
+        if (currentWord.includes(usrGuess)) {
+            currentWord.replace(i, usrGuess);
+        }
+    }
+}
+//===================================================================
+// Listen for user guess via input submit
+//===================================================================
+userInput.addEventListener("submit", event => {
+    event.preventDefault();
 
-
-
-
+})
